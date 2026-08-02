@@ -102,8 +102,7 @@ if(nombre.includes("kai") || nombre.includes("kairella")){
 document.getElementById("modalNombre").style.display="none";
 
 
-document.getElementById("final").classList.remove("oculto");
-
+document.getElementById("final").style.display="flex";
 
 
 let texto = 
