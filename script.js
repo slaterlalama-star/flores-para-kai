@@ -90,6 +90,7 @@ document.getElementById("modalNombre").style.display="flex";
 
 
 
+
 function descubrir(){
 
 
@@ -123,6 +124,7 @@ let texto =
 
 let mensajeFinal = document.getElementById("mensajeFinal");
 
+
 mensajeFinal.innerHTML="";
 
 
@@ -149,6 +151,11 @@ if(posicion >= texto.length){
 clearInterval(escribir);
 
 
+
+activarSecretos();
+
+
+
 }
 
 
@@ -161,6 +168,7 @@ clearInterval(escribir);
 
 
 
+
 }else{
 
 
@@ -168,6 +176,228 @@ alert("Creo que esa flor era para alguien especial ❤️");
 
 
 }
+
+
+}
+
+
+
+
+
+
+// ===============================
+// EASTER EGGS 🌹
+// ===============================
+
+
+
+function activarSecretos(){
+
+
+
+const rosa = document.querySelector(".rosa");
+
+
+let clicksRosa = 0;
+
+
+
+// ROSA GRANDE - 5 TOQUES
+
+
+rosa.addEventListener("click",()=>{
+
+
+clicksRosa++;
+
+
+if(clicksRosa === 5){
+
+
+
+mostrarSecreto(`
+
+🌹 Pensaste que era una flor normal...
+pero tenía un mensaje escondido ❤️
+
+
+No prometo un mundo perfecto,
+
+ni un camino sin dolor,
+
+pero sí caminar contigo
+
+con respeto y con amor.
+
+
+Cuidarte en los pequeños días,
+
+hacerte sonreír sin razón,
+
+llenarte de besos y abrazos,
+
+y darte siempre mi corazón.
+
+
+No corramos detrás del mañana,
+
+disfrutemos lo que Dios nos da,
+
+porque mientras estemos juntos,
+
+cada día algo bonito será. 🤍
+
+`);
+
+
+
+
+}
+
+
+
+});
+
+
+
+
+// ROSA PEQUEÑA EXTRA
+
+crearRosaSecreta();
+
+
+
+}
+
+
+
+
+
+
+
+
+function crearRosaSecreta(){
+
+
+let rosaPequena = document.createElement("div");
+
+
+rosaPequena.innerHTML="🌹";
+
+
+rosaPequena.style.position="absolute";
+
+rosaPequena.style.bottom="40px";
+
+rosaPequena.style.left="40px";
+
+rosaPequena.style.fontSize="35px";
+
+rosaPequena.style.cursor="pointer";
+
+rosaPequena.title="Un secreto";
+
+
+
+document.getElementById("final").appendChild(rosaPequena);
+
+
+
+rosaPequena.addEventListener("click",()=>{
+
+
+mostrarSecreto(`
+
+
+Si llegaste hasta aquí...
+significa que eres curiosa JAJA 🤍
+
+
+Te ganaste un abrazo, un beso
+y un momento conmigo.
+
+
+Cada vez que lo pidas,
+mi tiempo, mis caricias
+y mi cariño estarán para ti.
+
+
+Quiero que recuerdes algo:
+
+Eres alguien especial para mí 🌹
+
+
+`);
+
+
+
+
+});
+
+
+
+}
+
+
+
+
+
+
+
+
+
+function mostrarSecreto(texto){
+
+
+let secreto = document.createElement("div");
+
+
+
+secreto.innerHTML = texto;
+
+
+
+secreto.style.position="fixed";
+
+secreto.style.top="50%";
+
+secreto.style.left="50%";
+
+secreto.style.transform="translate(-50%, -50%)";
+
+secreto.style.background="rgba(0,0,0,0.95)";
+
+secreto.style.color="white";
+
+secreto.style.padding="30px";
+
+secreto.style.borderRadius="20px";
+
+secreto.style.maxWidth="85%";
+
+secreto.style.textAlign="center";
+
+secreto.style.fontSize="1.2rem";
+
+secreto.style.lineHeight="1.8";
+
+secreto.style.zIndex="999";
+
+
+
+document.body.appendChild(secreto);
+
+
+
+secreto.addEventListener("click",()=>{
+
+
+secreto.remove();
+
+
+
+});
+
 
 
 }
