@@ -18,7 +18,7 @@ const primeraPantalla = document.getElementById("primeraPantalla");
 
 
 
-const intervalo = setInterval(()=>{
+let intervalo = setInterval(()=>{
 
 
 i++;
@@ -31,7 +31,6 @@ mensaje.style.opacity = 0;
 
 
 setTimeout(()=>{
-
 
 mensaje.innerHTML = frases[i];
 
@@ -48,9 +47,7 @@ mensaje.style.opacity = 1;
 clearInterval(intervalo);
 
 
-
 mensaje.style.opacity = 0;
-
 
 
 setTimeout(()=>{
@@ -77,13 +74,17 @@ primeraPantalla.classList.remove("oculto");
 
 
 
+
 function abrirNombre(){
 
+
+document.getElementById("modalNombre").classList.remove("oculto");
 
 document.getElementById("modalNombre").style.display="flex";
 
 
 }
+
 
 
 
@@ -99,14 +100,15 @@ let nombre = document.getElementById("nombreKai").value.toLowerCase();
 if(nombre.includes("kai") || nombre.includes("kairella")){
 
 
-document.getElementById("modalNombre").style.display="none";
+document.getElementById("modalNombre").classList.add("oculto");
 
 
-// mostrar pantalla final
-document.getElementById("final").style.display="flex";
+
+let final = document.getElementById("final");
+
+final.classList.remove("oculto");
 
 
-// texto que aparecerá lentamente
 
 let texto = 
 "Siempre habrá flores para ti.\n\n"+
@@ -119,12 +121,13 @@ let texto =
 
 
 
+let mensajeFinal = document.getElementById("mensajeFinal");
+
+mensajeFinal.innerHTML="";
+
+
+
 let posicion = 0;
-
-
-let mensaje = document.getElementById("mensajeFinal");
-
-mensaje.innerHTML = "";
 
 
 
@@ -134,11 +137,10 @@ setTimeout(()=>{
 let escribir = setInterval(()=>{
 
 
-mensaje.innerHTML += texto[posicion];
+mensajeFinal.innerHTML += texto.charAt(posicion);
 
 
 posicion++;
-
 
 
 if(posicion >= texto.length){
@@ -155,7 +157,7 @@ clearInterval(escribir);
 
 
 
-},2000);
+},2500);
 
 
 
@@ -166,10 +168,6 @@ alert("Creo que esa flor era para alguien especial ❤️");
 
 
 }
-
-
-}
-
 
 
 }
