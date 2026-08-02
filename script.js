@@ -102,12 +102,14 @@ if(nombre.includes("kai") || nombre.includes("kairella")){
 document.getElementById("modalNombre").style.display="none";
 
 
+// mostrar pantalla final
 document.getElementById("final").style.display="flex";
 
 
+// texto que aparecerá lentamente
+
 let texto = 
 "Siempre habrá flores para ti.\n\n"+
-"Después...\n\n"+
 "De una u otra forma...\n\n"+
 "compradas,\n\n"+
 "hechas a mano,\n\n"+
@@ -120,6 +122,11 @@ let texto =
 let posicion = 0;
 
 
+let mensaje = document.getElementById("mensajeFinal");
+
+mensaje.innerHTML = "";
+
+
 
 setTimeout(()=>{
 
@@ -127,24 +134,28 @@ setTimeout(()=>{
 let escribir = setInterval(()=>{
 
 
-document.getElementById("mensajeFinal").innerHTML += texto[posicion];
+mensaje.innerHTML += texto[posicion];
 
 
 posicion++;
 
 
+
 if(posicion >= texto.length){
 
+
 clearInterval(escribir);
+
 
 }
 
 
-},120);
+
+},100);
 
 
 
-},2500);
+},2000);
 
 
 
@@ -152,6 +163,9 @@ clearInterval(escribir);
 
 
 alert("Creo que esa flor era para alguien especial ❤️");
+
+
+}
 
 
 }
