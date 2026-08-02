@@ -63,7 +63,6 @@ primeraPantalla.classList.remove("oculto");
 },2000);
 
 
-
 }
 
 
@@ -185,6 +184,8 @@ alert("Creo que esa flor era para alguien especial ❤️");
 
 
 
+
+
 // ===============================
 // EASTER EGGS 🌹
 // ===============================
@@ -218,6 +219,7 @@ if(clicksRosa === 5){
 mostrarSecreto(`
 
 🌹 Pensaste que era una flor normal...
+
 pero tenía un mensaje escondido ❤️
 
 
@@ -247,8 +249,8 @@ porque mientras estemos juntos,
 
 cada día algo bonito será. 🤍
 
-`);
 
+`);
 
 
 
@@ -261,13 +263,22 @@ cada día algo bonito será. 🤍
 
 
 
+
 // ROSA PEQUEÑA EXTRA
+
 
 crearRosaSecreta();
 
 
+// NUEVO EASTER EGG
+
+
+activarHechasMano();
+
+
 
 }
+
 
 
 
@@ -310,25 +321,29 @@ mostrarSecreto(`
 
 
 Si llegaste hasta aquí...
+
 significa que eres curiosa JAJA 🤍
 
 
 Te ganaste un abrazo, un beso
+
 y un momento conmigo.
 
 
 Cada vez que lo pidas,
+
 mi tiempo, mis caricias
+
 y mi cariño estarán para ti.
 
 
 Quiero que recuerdes algo:
 
+
 Eres alguien especial para mí 🌹
 
 
 `);
-
 
 
 
@@ -338,6 +353,133 @@ Eres alguien especial para mí 🌹
 
 }
 
+
+
+
+
+
+
+
+function activarHechasMano(){
+
+
+let texto = document.getElementById("mensajeFinal");
+
+
+let contenido = texto.innerHTML;
+
+
+
+if(contenido.includes("hechas a mano")){
+
+
+texto.innerHTML = contenido.replace(
+
+"hechas a mano",
+
+"<span id='secretoManos'>hechas a mano</span>"
+
+);
+
+
+
+let palabra = document.getElementById("secretoManos");
+
+
+palabra.style.cursor="pointer";
+
+
+palabra.style.fontWeight="bold";
+
+
+let clicks = 0;
+
+
+
+palabra.addEventListener("click",()=>{
+
+
+clicks++;
+
+
+if(clicks === 3){
+
+
+mostrarSecreto(`
+
+
+🤍 Pensaste que solo hablaba de flores...
+
+
+Pero hay algo más detrás de estas manos.
+
+
+Manos que quieren crear momentos,
+
+dibujar sonrisas en tus días,
+
+guardar abrazos que duren para siempre,
+
+y convertir pequeños instantes
+
+en recuerdos llenos de amor.
+
+
+Manos que quieren cuidarte,
+
+protegerte cuando lo necesites,
+
+tomarte fuerte cuando tengas miedo,
+
+y recordarte que eres alguien especial.
+
+
+Porque no quiero solamente regalarte flores...
+
+
+Quiero crear contigo historias bonitas,
+
+llenar tus días de cariño,
+
+hacerte reír sin motivo,
+
+y aprender cada detalle de tu corazón.
+
+
+Y sí...
+
+también quiero que mis manos conozcan
+
+la forma de hacerte sentir mi amor:
+
+con abrazos,
+
+con caricias,
+
+con ternura,
+
+y con ese amor que se demuestra
+
+más allá de las palabras.
+Que cada parte de ti, la recorra una y otra vez
+porque todo de ti, me fascina.🌹
+
+
+`);
+
+
+}
+
+
+
+});
+
+
+}
+
+
+
+}
 
 
 
@@ -397,7 +539,6 @@ secreto.remove();
 
 
 });
-
 
 
 }
