@@ -139,9 +139,10 @@ transform:scale(1.05);
 
 .oculto{
 
-display:none;
+display:none !important;
 
 }
+
 
 
 
@@ -159,6 +160,8 @@ justify-content:center;
 align-items:center;
 
 }
+
+
 
 
 
@@ -180,6 +183,8 @@ width:300px;
 
 
 
+
+
 .cajaNombre input{
 
 padding:12px;
@@ -196,16 +201,22 @@ text-align:center;
 
 
 
+
+
 #final{
 
 position:fixed;
+
 inset:0;
+
 background:black;
 
-display:none;
+display:flex;
 
 flex-direction:column;
+
 justify-content:center;
+
 align-items:center;
 
 text-align:center;
@@ -213,6 +224,7 @@ text-align:center;
 padding:30px;
 
 }
+
 
 
 .rosa{
@@ -259,7 +271,6 @@ opacity:1;
 
 
 }
-
 
 
 
