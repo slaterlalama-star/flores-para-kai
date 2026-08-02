@@ -199,17 +199,13 @@ text-align:center;
 #final{
 
 position:fixed;
-
 inset:0;
-
 background:black;
 
-display:flex;
+display:none;
 
 flex-direction:column;
-
 justify-content:center;
-
 align-items:center;
 
 text-align:center;
@@ -217,7 +213,6 @@ text-align:center;
 padding:30px;
 
 }
-
 
 
 .rosa{
