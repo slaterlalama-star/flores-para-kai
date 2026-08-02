@@ -1,70 +1,45 @@
 const frases = [
-
 "Hoy muchas personas regalan flores.",
-
 "Yo también quería hacerlo...",
-
 "...pero quería darte unas que nunca se marchiten."
-
 ];
 
 
 let i = 0;
 
-
 const mensaje = document.getElementById("mensaje");
-
 const primeraPantalla = document.getElementById("primeraPantalla");
-
 
 
 let intervalo = setInterval(()=>{
 
-
 i++;
-
 
 if(i < frases.length){
 
-
 mensaje.style.opacity = 0;
 
-
 setTimeout(()=>{
-
 mensaje.innerHTML = frases[i];
-
 mensaje.style.opacity = 1;
-
-
 },1500);
-
 
 
 }else{
 
-
 clearInterval(intervalo);
-
 
 mensaje.style.opacity = 0;
 
-
 setTimeout(()=>{
-
 
 mensaje.style.display="none";
 
-
 primeraPantalla.classList.remove("oculto");
-
-
 
 },2000);
 
-
 }
-
 
 },6000);
 
@@ -72,15 +47,11 @@ primeraPantalla.classList.remove("oculto");
 
 
 
-
-
 function abrirNombre(){
-
 
 document.getElementById("modalNombre").classList.remove("oculto");
 
 document.getElementById("modalNombre").style.display="flex";
-
 
 }
 
@@ -88,20 +59,15 @@ document.getElementById("modalNombre").style.display="flex";
 
 
 
-
-
 function descubrir(){
 
-
 let nombre = document.getElementById("nombreKai").value.toLowerCase();
-
 
 
 if(nombre.includes("kai") || nombre.includes("kairella")){
 
 
 document.getElementById("modalNombre").classList.add("oculto");
-
 
 
 let final = document.getElementById("final");
@@ -123,10 +89,7 @@ let texto =
 
 let mensajeFinal = document.getElementById("mensajeFinal");
 
-
 mensajeFinal.innerHTML="";
-
-
 
 let posicion = 0;
 
@@ -134,53 +97,37 @@ let posicion = 0;
 
 setTimeout(()=>{
 
-
 let escribir = setInterval(()=>{
 
 
 mensajeFinal.innerHTML += texto.charAt(posicion);
-
 
 posicion++;
 
 
 if(posicion >= texto.length){
 
-
 clearInterval(escribir);
 
-
-
 activarSecretos();
-
-
 
 }
 
 
-
 },100);
-
 
 
 },2500);
 
 
 
-
 }else{
-
 
 alert("Creo que esa flor era para alguien especial ❤️");
 
-
 }
 
-
 }
-
-
-
 
 
 
@@ -188,6 +135,7 @@ alert("Creo que esa flor era para alguien especial ❤️");
 
 // ===============================
 // EASTER EGGS 🌹
+// SISTEMA GENERAL
 // ===============================
 
 
@@ -195,15 +143,10 @@ alert("Creo que esa flor era para alguien especial ❤️");
 function activarSecretos(){
 
 
-
 const rosa = document.querySelector(".rosa");
-
 
 let clicksRosa = 0;
 
-
-
-// ROSA GRANDE - 5 TOQUES
 
 
 rosa.addEventListener("click",()=>{
@@ -213,7 +156,6 @@ clicksRosa++;
 
 
 if(clicksRosa === 5){
-
 
 
 mostrarSecreto(`
@@ -229,14 +171,14 @@ ni un camino sin dolor,
 
 pero sí caminar contigo
 
-con respeto y con amor.
+con respeto y amor.
 
 
 Cuidarte en los pequeños días,
 
 hacerte sonreír sin razón,
 
-llenarte de besos y abrazos,
+llenarte de abrazos,
 
 y darte siempre mi corazón.
 
@@ -252,10 +194,7 @@ cada día algo bonito será. 🤍
 
 `);
 
-
-
 }
-
 
 
 });
@@ -264,16 +203,130 @@ cada día algo bonito será. 🤍
 
 
 
-// ROSA PEQUEÑA EXTRA
-
-
 crearRosaSecreta();
 
 
-// NUEVO EASTER EGG
+
+// AQUÍ AGREGAMOS NUEVOS EGGS
+
+crearEggPalabra(
+"hechas a mano",
+`
+
+🤍 Pensaste que solo hablaba de flores...
 
 
-activarHechasMano();
+Pero hay algo más detrás de estas manos.
+
+
+Manos que quieren crear momentos,
+
+dibujar sonrisas en tus días,
+
+guardar abrazos para siempre,
+
+y convertir pequeños instantes
+
+en recuerdos llenos de amor.
+
+
+Manos que quieren cuidarte,
+
+protegerte,
+
+sostenerte cuando lo necesites.
+
+
+Porque no quiero solamente regalarte flores...
+
+
+Quiero crear contigo historias bonitas,
+
+llenar tus días de cariño,
+
+y demostrarte amor con detalles.
+
+
+Y sí...
+
+quiero que mis manos aprendan
+
+la forma de hacerte sentir amada:
+
+con abrazos,
+
+con ternura,
+
+con caricias,
+
+y con ese amor que se demuestra
+
+más allá de las palabras. 🌹
+
+`,
+3
+);
+
+
+
+crearEggPalabra(
+"improvisadas",
+`
+
+🌹 Pensaste que era una palabra más...
+
+
+Pero hay momentos que no necesitan un plan.
+
+
+Una sonrisa inesperada,
+
+un abrazo sin motivo,
+
+una conversación que se alarga,
+
+un recuerdo que nace sin avisar.
+
+
+El amor que quiero darte no es improvisado,
+
+porque mis sentimientos son reales.
+
+
+Pero sí quiero improvisar contigo
+
+cada día que Dios nos permita.
+
+
+Crear momentos únicos,
+
+reírnos de cosas simples,
+
+sorprendernos,
+
+y caminar juntos.
+
+
+Y si improvisamos cada día juntos,
+
+confiando en Dios...
+
+quizá descubramos que los mejores recuerdos
+
+son los que nunca planeamos.
+
+
+Que cada abrazo inesperado,
+
+cada caricia llena de amor,
+
+y cada beso nacido del momento...
+
+valga por dos. 🤍
+
+`,
+3
+);
 
 
 
@@ -281,6 +334,69 @@ activarHechasMano();
 
 
 
+
+
+// FUNCIÓN PARA CREAR CUALQUIER EASTER EGG
+
+function crearEggPalabra(palabra, mensaje, cantidadClicks){
+
+
+let contenedor = document.getElementById("mensajeFinal");
+
+
+let contenido = contenedor.innerHTML;
+
+
+
+if(contenido.includes(palabra)){
+
+
+let id = "egg_" + palabra.replaceAll(" ","_");
+
+
+contenedor.innerHTML = contenido.replace(
+
+palabra,
+
+`<span id="${id}">${palabra}</span>`
+
+);
+
+
+
+let elemento = document.getElementById(id);
+
+
+elemento.style.cursor="pointer";
+
+elemento.style.fontWeight="bold";
+
+
+let clicks = 0;
+
+
+elemento.addEventListener("click",()=>{
+
+
+clicks++;
+
+
+if(clicks === cantidadClicks){
+
+
+mostrarSecreto(mensaje);
+
+
+}
+
+
+});
+
+
+}
+
+
+}
 
 
 
@@ -295,7 +411,6 @@ let rosaPequena = document.createElement("div");
 
 rosaPequena.innerHTML="🌹";
 
-
 rosaPequena.style.position="absolute";
 
 rosaPequena.style.bottom="40px";
@@ -309,7 +424,6 @@ rosaPequena.style.cursor="pointer";
 rosaPequena.title="Un secreto";
 
 
-
 document.getElementById("final").appendChild(rosaPequena);
 
 
@@ -319,168 +433,26 @@ rosaPequena.addEventListener("click",()=>{
 
 mostrarSecreto(`
 
-
 Si llegaste hasta aquí...
 
 significa que eres curiosa JAJA 🤍
 
 
-Te ganaste un abrazo, un beso
+Te ganaste un abrazo,
+
+un beso
 
 y un momento conmigo.
 
 
-Cada vez que lo pidas,
-
-mi tiempo, mis caricias
-
-y mi cariño estarán para ti.
-
-
-Quiero que recuerdes algo:
-
-
 Eres alguien especial para mí 🌹
 
-
 `);
-
-
-
-});
-
-
-
-}
-
-
-
-
-
-
-
-
-function activarHechasMano(){
-
-
-let texto = document.getElementById("mensajeFinal");
-
-
-let contenido = texto.innerHTML;
-
-
-
-if(contenido.includes("hechas a mano")){
-
-
-texto.innerHTML = contenido.replace(
-
-"hechas a mano",
-
-"<span id='secretoManos'>hechas a mano</span>"
-
-);
-
-
-
-let palabra = document.getElementById("secretoManos");
-
-
-palabra.style.cursor="pointer";
-
-
-palabra.style.fontWeight="bold";
-
-
-let clicks = 0;
-
-
-
-palabra.addEventListener("click",()=>{
-
-
-clicks++;
-
-
-if(clicks === 3){
-
-
-mostrarSecreto(`
-
-
-🤍 Pensaste que solo hablaba de flores...
-
-
-Pero hay algo más detrás de estas manos.
-
-
-Manos que quieren crear momentos,
-
-dibujar sonrisas en tus días,
-
-guardar abrazos que duren para siempre,
-
-y convertir pequeños instantes
-
-en recuerdos llenos de amor.
-
-
-Manos que quieren cuidarte,
-
-protegerte cuando lo necesites,
-
-tomarte fuerte cuando tengas miedo,
-
-y recordarte que eres alguien especial.
-
-
-Porque no quiero solamente regalarte flores...
-
-
-Quiero crear contigo historias bonitas,
-
-llenar tus días de cariño,
-
-hacerte reír sin motivo,
-
-y aprender cada detalle de tu corazón.
-
-
-Y sí...
-
-también quiero que mis manos conozcan
-
-la forma de hacerte sentir mi amor:
-
-con abrazos,
-
-con caricias,
-
-con ternura,
-
-y con ese amor que se demuestra
-
-más allá de las palabras.
-Que cada parte de ti, la recorra una y otra vez
-porque todo de ti, me fascina.🌹
-
-
-`);
-
-
-}
-
-
 
 });
 
 
 }
-
-
-
-}
-
 
 
 
@@ -494,9 +466,7 @@ function mostrarSecreto(texto){
 let secreto = document.createElement("div");
 
 
-
 secreto.innerHTML = texto;
-
 
 
 secreto.style.position="fixed";
@@ -533,10 +503,7 @@ document.body.appendChild(secreto);
 
 secreto.addEventListener("click",()=>{
 
-
 secreto.remove();
-
-
 
 });
 
