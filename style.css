@@ -6,6 +6,7 @@ box-sizing:border-box;
 
 }
 
+
 body{
 
 background:#000;
@@ -14,9 +15,7 @@ color:white;
 height:100vh;
 
 display:flex;
-
 justify-content:center;
-
 align-items:center;
 
 font-family:Georgia, serif;
@@ -25,34 +24,42 @@ overflow:hidden;
 
 }
 
+
+
 #intro{
 
 text-align:center;
-
 padding:30px;
 
 }
+
+
 
 #mensaje{
 
 font-size:2rem;
 
-font-weight:normal;
-
 line-height:1.6;
+
+font-weight:normal;
 
 opacity:1;
 
-transition:1s;
+transition:1.5s;
 
 }
-#final{
+
+
+
+#primeraPantalla{
 
 text-align:center;
 
-animation: aparecer 1.5s ease;
+animation:aparecer 2s ease;
 
 }
+
+
 
 #ramo{
 
@@ -66,21 +73,27 @@ transition:.5s;
 
 }
 
+
+
 #ramo:hover{
 
-transform:scale(1.03);
+transform:scale(1.05);
 
 }
 
-h2{
 
-margin-bottom:20px;
+
+h2{
 
 font-size:2rem;
 
 font-weight:normal;
 
+margin-bottom:20px;
+
 }
+
+
 
 p{
 
@@ -91,6 +104,8 @@ line-height:1.8;
 margin-bottom:35px;
 
 }
+
+
 
 button{
 
@@ -112,120 +127,166 @@ transition:.3s;
 
 }
 
+
+
 button:hover{
 
 transform:scale(1.05);
 
 }
 
-@keyframes aparecer{
 
-from{
 
-opacity:0;
-transform:translateY(20px);
-
-}
-
-to{
-
-opacity:1;
-transform:translateY(0);
-
-}
-
-}
 .oculto{
-    display:none;
+
+display:none;
+
 }
 
 
-#modalNombre.oculto{
-    display:none;
-}
+
 
 #modalNombre{
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,0.95);
-    justify-content:center;
-    align-items:center;
-    animation:aparecer 1s;
+
+position:fixed;
+
+inset:0;
+
+background:rgba(0,0,0,.95);
+
+justify-content:center;
+
+align-items:center;
+
 }
+
 
 
 .cajaNombre{
-    background:white;
-    color:black;
-    padding:35px;
-    border-radius:20px;
-    text-align:center;
-    width:300px;
+
+background:white;
+
+color:black;
+
+padding:35px;
+
+border-radius:20px;
+
+text-align:center;
+
+width:300px;
+
 }
+
 
 
 .cajaNombre input{
-    padding:12px;
-    width:80%;
-    border-radius:20px;
-    border:1px solid #aaa;
-    text-align:center;
+
+padding:12px;
+
+width:80%;
+
+border-radius:20px;
+
+border:1px solid #aaa;
+
+text-align:center;
+
 }
 
-
-.cajaNombre button{
-    margin-top:20px;
-    padding:12px 25px;
-    border-radius:25px;
-    border:none;
-    cursor:pointer;
-}
 
 
 #final{
-    position:fixed;
-    inset:0;
-    background:black;
-    color:white;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    font-size:25px;
-    padding:30px;
+
+position:fixed;
+
+inset:0;
+
+background:black;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+text-align:center;
+
+padding:30px;
+
 }
+
 
 
 .rosa{
-    font-size:80px;
-    animation:caer 2s ease forwards;
+
+font-size:90px;
+
+animation:caer 3s ease forwards;
+
 }
+
+
+
+#mensajeFinal{
+
+font-size:1.4rem;
+
+max-width:600px;
+
+white-space:pre-line;
+
+}
+
 
 
 @keyframes caer{
 
-0%{
+
+from{
+
 transform:translateY(-300px);
+
 opacity:0;
+
 }
 
-100%{
+
+to{
+
 transform:translateY(0);
+
 opacity:1;
-}
 
 }
+
+
+}
+
+
 
 
 @keyframes aparecer{
 
+
 from{
+
 opacity:0;
+
+transform:translateY(20px);
+
 }
 
+
 to{
+
 opacity:1;
+
+transform:translateY(0);
+
 }
+
 
 }
